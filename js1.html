@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <script>
+        fname = prompt("Enter your first name:")
+        lname = prompt("Enter your last name:")
+        alert(`Your name is ${fname} ${lname}`)
+        window.onload = function(){
+            btn = document.getElementById("btn");
+            btn.onclick = function(){
+                calculate(document.getElementById("children").value);
+            }
+        }
+        function calculate(num){
+            if(num < 1){
+                document.getElementById("children-text").innerHTML = "<p>You have no children.</p>";
+            } else if (num == 1){
+                document.getElementById("children-text").innerHTML = "<p>You have 1 child.</p>";
+            } else if (num > 1){
+                document.getElementById("children-text").innerHTML = `<p>You have ${num} children.</p>`;
+            } 
+        }
+        </script>
+
+    <label for="children">How many children do you have? </label>
+    <input type="number" id="children" name="children">
+    <input type="submit" value="Submit" id="btn"><br>
+    <div id="children-text"></div>
+
+</body>
+</html>
+

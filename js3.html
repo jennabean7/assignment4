@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="odd"></div>
+        <div id="sum"></div>
+        <script>
+            begin = Number(prompt("Enter a number to start the range:"))
+            end = Number(prompt("Enter a number to end the range:"))
+            values = []
+
+            function is_odd(num){
+                if(num % 2){
+                    return true;
+                } else{
+                    return false;
+                }
+            }
+
+            sum = 0;
+            for(i = begin; i <= end; i++){
+                if(is_odd(i)){
+                    values.push(i)
+                    sum += i;
+                }
+            }
+
+            document.getElementById("odd").innerHTML = values;
+            document.getElementById("sum").innerHTML = sum;
+
+        </script>
+    </body>
+</html>

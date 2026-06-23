@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="result"></div>
+        <script>
+            function str_to_list(names){
+                list = names.split(', ');
+                str = list.join("</li><li>");
+                result = "<ol><li>" + str + "<ol>";
+                return result;
+            }
+            function test_str_to_list(){
+                result = str_to_list("Pat, Chris, Marlon, Ferncroft, Assunta");
+                document.getElementById("result").innerHTML = result;
+            }
+
+            test_str_to_list();
+            
+        </script>
+    </body>
+</html>

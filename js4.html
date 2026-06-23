@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="result"></div>
+        <script>
+            function count(array, value){
+                result = 0;
+                for(i = 0; i < array.length; i++){
+                    if(array[i] < value){
+                        result++;
+                    }
+                }
+                return result;
+            }
+            function testCount(){
+                value = count([5, 10, 2, 9, 6, 304, 54], 25);
+                document.getElementById("result").innerHTML = value;
+            }
+
+            testCount();
+        </script>
+    </body>
+</html>
