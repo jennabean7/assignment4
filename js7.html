@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <script>
+            window.onload = function(){
+                belowDiv = document.getElementById("below");
+                selector = document.getElementById("states");
+
+                addBtn = document.getElementById("add");
+                addBtn.onclick = function(){
+                    selected = document.getElementById("states").value
+                    belowDiv.innerHTML = belowDiv.innerHTML + selected + "<br>";
+                }
+
+                clearBtn = document.getElementById("clear");
+                clearBtn.onclick = function(){
+                    belowDiv.innerHTML = "";
+                }
+
+
+                create_elements(states);
+            }
+            states = ["New Hampshire", "Vermont", "New Jersey", "New York", "Maine", "Rhode Island", "Connecticut", "Massachusetts", "Pennsylvania", "Ohio"]
+
+            function create_elements(list){
+                result = "";
+                for(const element of list){
+                    if(list[0] == element){
+                        result = result + `<option selected value="${element}">${element}</option>`;
+                    } else{
+                        result = result + `<option value="${element}">${element}</option>`;
+                    }
+                   
+                }
+                document.getElementById("states").innerHTML = result
+            }
+
+
+        </script>
+
+        <form>
+            <select id="states" size="10">
+            </select>
+            <input type="button" value="Add State" id="add">
+        </form>
+
+        <div style="border: 1px #000 solid" id="below">
+            
+        </div>
+        <input type="button" value="Clear States" id="clear">
+    </body>
+</html>

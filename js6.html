@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <form>
+            <script>
+
+                window.onload = function() {
+                    helloBtn = document.getElementById("hello");
+                    helloBtn.onclick = function() {
+                        speak(helloBtn.value);
+                    }
+                    
+                    goodbyeBtn = document.getElementById("goodbye");
+                    goodbyeBtn.onclick = function() {
+                        speak(goodbyeBtn.value);
+                    }
+
+                    greetingsBtn = document.getElementById("greetings");
+                    greetingsBtn.onclick = function() {
+                        speak(greetingsBtn.value);
+                    }
+                }
+
+                function speak(greeting){
+                    username = document.getElementById("username").value;
+                    if(greeting === "Hello"){
+                        document.getElementById("output").innerHTML = "Hello " + username;
+                    }
+                    if(greeting === "Good Bye"){
+                        document.getElementById("output").innerHTML = "Good Bye " + username;
+                    }
+                    if(greeting === "Greetings"){
+                        document.getElementById("output").innerHTML = "Greetings " + username;
+                    }
+                }
+
+            </script>
+            
+            <label for="uname" name="uname" id="uname">Name:</label><br>
+            <input type="text" id="username"/><br>
+            <input type="button" value="Hello" id="hello"/><br>
+            <input type="button" value="Good Bye" id="goodbye"/><br>
+            <input type="button" value="Greetings" id="greetings"/><br>
+            <label name="output" id="output"></label>
+
+            
+        </form>
+    </body>
+</html>
